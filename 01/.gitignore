@@ -1,0 +1,57 @@
+# ========================
+# Compiled object files
+# ========================
+*.o
+*.obj
+*.lo
+*.slo
+
+# ========================
+# Executables
+# ========================
+*.exe
+*.out
+*.app
+
+# ========================
+# Static and dynamic libraries
+# ========================
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# ========================
+# Debug files
+# ========================
+*.dbg
+*.pdb
+
+# ========================
+# VS Code
+# ========================
+.vscode/
+
+# ========================
+# Build folders
+# ========================
+build/
+bin/
+Debug/
+Release/
+
+# ========================
+# CMake (if you ever use it)
+# ========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ========================
+# Temporary files
+# ========================
+*.log
+*.tmp
+*.cache
