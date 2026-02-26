@@ -3,21 +3,43 @@
 
 const int MAX = 20;
 
+enum class PREDMET {
+    Matematicka_Analyza, 
+    Linearni_Algebra, 
+    Diskretni_Matematika, 
+    Statistika, 
+    Ekonomie, 
+    Anglicky_Jazyk, 
+    Programovani, 
+    Fyzika
+};
+
+enum class ZNAMKA { A, B, C, D, E, F };
+
+class Predmet {
+private:
+    PREDMET predmet;
+    ZNAMKA znamka;
+    bool zapocet = false;
+    int pocet_pokusu = 3;
+    bool zkouska = false;
+    bool splnen = false;
+
+public:
+    Predmet() : predmet(PREDMET::Matematicka_Analyza), znamka(ZNAMKA::F) {};
+    Predmet(PREDMET p, ZNAMKA z) : predmet(p), znamka(z) {};
+    PREDMET GetPredmet() { return predmet; };
+    ZNAMKA GetZnamka() { return znamka; };
+};
+
 class Student {
 private:
     std::string jmeno;
     Predmet predmety[MAX];
+    int pocet_predmetu;
 
 public:
-    int PocetPredmetu() {
-        int count = 0;
-        for (int i = 0; i < MAX; i++) {
-            if (predmety[i].GetPredmet() != "") {
-                count++;
-            }
-        }
-        return count;
-    };
+    int PocetPredmetu();
     void Zapis (Predmet p) {
         int no = PocetPredmetu();
         for (int i = (no++); i < MAX; i++) {
@@ -29,20 +51,4 @@ public:
         }
     };
 
-};
-
-class Predmet {
-private:
-    std::string nazev;
-    int znamka;
-    bool absolvovano;
-    int zapocet;
-    int zkouska;
-public:
-    std::string GetPredmet() {return nazev;};
-    GetZnamka() {return znamka;};
-    GetAbsolvovano() {return absolvovano;};
-    GetZapocet() {return zapocet;};
-    GetZkouska() {return zkouska;};
-    SetPredmet(std::string n) {nazev = n;};
 };
