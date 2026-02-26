@@ -11,6 +11,6 @@ int main() {
     printf("c1 + c2: %.2f + %.2fi\n", c3.GetReal(), c3.GetImag());
     printf("c1 - c2: %.2f + %.2fi\n", c4.GetReal(), c4.GetImag());
     printf("c1 * c2: %.2f + %.2fi\n", c5.GetReal(), c5.GetImag());
-    
+
     return 0;
 }

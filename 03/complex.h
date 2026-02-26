@@ -16,7 +16,8 @@ public:
     double GetReal();
     double GetImag();
 
-    Complex Copy() { return Complex(real, imag);}
+    Complex Copy(Complex c);
+
     Complex& operator=(const Complex& other) {
         if (this != &other) {
             real = other.real;
