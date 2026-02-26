@@ -26,8 +26,6 @@ private:
     bool splnen = false;
 
 public:
-    Predmet() : predmet(PREDMET::Matematicka_Analyza), znamka(ZNAMKA::F) {};
-    Predmet(PREDMET p, ZNAMKA z) : predmet(p), znamka(z) {};
     PREDMET GetPredmet() { return predmet; };
     ZNAMKA GetZnamka() { return znamka; };
 };
@@ -39,16 +37,7 @@ private:
     int pocet_predmetu;
 
 public:
-    int PocetPredmetu();
-    void Zapis (Predmet p) {
-        int no = PocetPredmetu();
-        for (int i = (no++); i < MAX; i++) {
-
-            if (predmety[i].GetPredmet() == "") {
-                predmety[i] = p;
-                break;
-            }
-        }
-    };
-
+    Student(std::string j) : jmeno(j), pocet_predmetu(0) {};
+    bool Zapis (Predmet p);
+    bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z);
 };
