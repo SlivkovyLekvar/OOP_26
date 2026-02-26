@@ -16,15 +16,9 @@ public:
     double GetReal();
     double GetImag();
 
-    Complex Copy(Complex c);
+    Complex(const Complex& c) {real = c.real; imag = c.imag;};
 
-    Complex& operator=(const Complex& other) {
-        if (this != &other) {
-            real = other.real;
-            imag = other.imag;
-        }
-        return *this;
-    }
+    Complex operator=(const Complex& c);
     Complex operator+(const Complex& other) { return scitani(other); }
     Complex operator-(const Complex& other) { return odcitani(other); }
     Complex operator*(const Complex& other) { return nasobeni(other); }

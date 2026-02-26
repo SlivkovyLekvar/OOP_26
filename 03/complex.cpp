@@ -20,6 +20,14 @@ double Complex::GetReal() { return real; };
 
 double Complex::GetImag() { return imag; };
 
-Complex Complex::Copy(Complex c) { return Complex(c.GetReal(), c.GetImag()); };
+Complex Complex::operator=(const Complex& c) {
+    real = c.real;
+    imag = c.imag;
+    return *this;
+};
+
+
+
+
 
 

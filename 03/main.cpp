@@ -12,5 +12,16 @@ int main() {
     printf("c1 - c2: %.2f + %.2fi\n", c4.GetReal(), c4.GetImag());
     printf("c1 * c2: %.2f + %.2fi\n", c5.GetReal(), c5.GetImag());
 
+    Complex c6 = c5;
+    printf("Copy of c5: %.2f + %.2fi\n", c6.GetReal(), c6.GetImag());  
+
+    Complex c7;
+    printf("Default complex number: %.2f + %.2fi\n", c7.GetReal(), c7.GetImag());
+
+    Complex c8;
+    c8 = c2;
+    printf("Assigned c2 to c8: %.2f + %.2fi\n", c8.GetReal(), c8.GetImag());
+
+    
     return 0;
 }
