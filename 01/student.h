@@ -17,17 +17,13 @@ enum class PREDMET {
 enum class ZNAMKA { A, B, C, D, E, F };
 
 class Predmet {
-private:
+public:
     PREDMET predmet;
     ZNAMKA znamka;
     bool zapocet = false;
     int pocet_pokusu = 3;
     bool zkouska = false;
     bool splnen = false;
-
-public:
-    PREDMET GetPredmet() { return predmet; };
-    ZNAMKA GetZnamka() { return znamka; };
 };
 
 class Student {
