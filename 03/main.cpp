@@ -22,6 +22,13 @@ int main() {
     c8 = c2;
     printf("Assigned c2 to c8: %.2f + %.2fi\n", c8.GetReal(), c8.GetImag());
 
-    
+    c5 += c2;
+    printf("c5 += c2: %.2f + %.2fi\n", c5.GetReal(), c5.GetImag());
+
+    c5 -= c1;
+    printf("c5 -= c1: %.2f + %.2fi\n", c5.GetReal(), c5.GetImag());
+
+    c5 *= 2;
+    printf("c5 *= c2: %.2f + %.2fi\n", c5.GetReal(), c5.GetImag());
     return 0;
 }

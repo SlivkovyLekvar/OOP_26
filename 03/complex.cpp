@@ -26,8 +26,22 @@ Complex Complex::operator=(const Complex& c) {
     return *this;
 };
 
+Complex Complex::operator+=(const Complex& c) {
+    real += c.real;
+    imag += c.imag;
+    return *this;
+}
 
+Complex Complex::operator-=(const Complex& c) {
+    real -= c.real;
+    imag -= c.imag;
+    return *this;
+}
 
-
+Complex Complex::operator*=(double x) {
+    real *= x;
+    imag *= x;
+    return *this;
+}
 
 
