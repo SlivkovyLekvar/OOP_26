@@ -8,9 +8,8 @@ class Str {
     public:
         // implicit constructor
         Str() {buff = 0;};
-        // explicit constructors
+        // copy constructors
         Str(const Str& s);
-        // copy constructor
         Str(const char* s);
 
         // destructor
@@ -24,5 +23,9 @@ class Str {
         Str operator+(const Str& s);
         // concatenation operator for c-string 
         Str operator+(const char* s);
+
+        int len() const;
+
+        void clear() {delete[] buff; buff = 0;};
 
 };  
