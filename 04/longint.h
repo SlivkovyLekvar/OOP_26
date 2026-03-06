@@ -14,4 +14,11 @@ class LongInt {
     // assignment operator
     LongInt operator=(const LongInt &li);
     int operator=(const int64_t &v);
+    // copy constructor for char
+    LongInt (const char* str);
+    //asignment operator for char
+    LongInt operator=(const char* str);
+    //length of char
+    int len(const char* str);
+
 };
