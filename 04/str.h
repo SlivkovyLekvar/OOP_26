@@ -16,9 +16,9 @@ class Str {
         ~Str() {delete[] buff;};
 
         // assignment operator
-        Str operator=(const Str& s);
+        Str& operator=(const Str& s);
         // assignment operator for c-string
-        Str operator=(const char* s);
+        Str& operator=(const char* s);
         // concatenation operator
         Str operator+(const Str& s);
         // concatenation operator for c-string 

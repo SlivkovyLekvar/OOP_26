@@ -1,10 +1,10 @@
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
 
 class LongInt {
     private:
         int64_t value;
     public:
+    LongInt(int64_t v) {value = v;};
     // implicit constructor
     LongInt() {value = 0;};
     // destructor
@@ -20,5 +20,7 @@ class LongInt {
     LongInt operator=(const char* str);
     //length of char
     int len(const char* str);
+    // exponentiation operator
+    int64_t exp(int base, int exponent);
 
 };
