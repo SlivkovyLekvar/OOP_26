@@ -10,9 +10,8 @@ int main() {
     LongInt li2 = li1;
     LongInt li3;
     li3 = li1;
-    printf("%lld\n", li3);
     LongInt li4;
     li4 = "9rggs10987gawret0";
-    printf("%lld\n", li4);
+    // %lld will not print LongInt correctly, it is printed inside the implementation as int64_t
     return 0;
 }
