@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 const int MAX = 20;
 
@@ -14,16 +15,21 @@ enum class PREDMET {
     Fyzika
 };
 
-enum class ZNAMKA { A, B, C, D, E, F };
+enum class ZNAMKA { A, B, C, D, E, F, X };
 
 class Predmet {
-public:
+private:
     PREDMET predmet;
-    ZNAMKA znamka;
+public:
+    ZNAMKA znamka = ZNAMKA::X;
     bool zapocet = false;
-    int pocet_pokusu = 3;
     bool zkouska = false;
-    bool splnen = false;
+    int pocet_pokusu = 3;
+    bool splnen = (zapocet && zkouska) ? true : false;
+
+    Predmet() {};
+    Predmet(PREDMET p) : predmet(p) {};
+    PREDMET GetPredmet() { return predmet; }
 };
 
 class Student {
@@ -35,5 +41,5 @@ private:
 public:
     Student(std::string j) : jmeno(j), pocet_predmetu(0) {};
     bool Zapis (Predmet p);
-    bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z);
+    bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
 };
