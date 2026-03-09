@@ -47,6 +47,11 @@ public:
     int VypisZnamek();
     int SplnenychPredmetu();
     float PrumerZnamek();
+
+    //copy constructor
+    Student(const Student& vzor);
+
+    const char* GetJmeno() { return jmeno.c_str(); }
 };
 
 // NENÍ MOJE TVORBA: Pomocná funkce pro převod enum PREDMET na čitelný název 

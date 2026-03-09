@@ -98,3 +98,13 @@ const char* NazevPredmetu(PREDMET p) {
         default: return "Neznámý předmět";
     }
 }
+
+//copy constructor
+Student::Student (const Student& vzor) {
+    jmeno = vzor.jmeno;
+    pocet_predmetu = vzor.pocet_predmetu;
+    predmety[MAX];
+    for (int i = 0; i < pocet_predmetu; i++) {
+        predmety[i] = vzor.predmety[i];
+    }
+}
