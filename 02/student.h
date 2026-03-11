@@ -52,7 +52,7 @@ public:
 
     //copy constructor
     Student(const Student& vzor);
-
+    
     void SetJmeno(const char* j);
     const char* GetJmeno();
     ~Student();

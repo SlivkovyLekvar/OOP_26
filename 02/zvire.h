@@ -4,19 +4,24 @@
 class Zvire {
 private:
     int zaludek;
-    std::string jmeno;
+    char* jmeno;
 
 public:
     Zvire() {zaludek = 1;};
     Zvire(int z) {zaludek = z;};
-    
-    //copy constructor
-    Zvire(const Zvire& vzor);
 
     int zije() {return zaludek>0;};
     int jez(int jidlo);
     int vymesuj(int objem);
     int stari();
 
-    const char* GetJmeno() {return jmeno.c_str();}
+    //copy constructor
+    Zvire(const Zvire& vzor);
+    //constructor
+    Zvire(const char* j);
+
+    //Get, Set, destructor
+    const char* GetJmeno();
+    void SetJmeno(const char* j);
+    ~Zvire();
 };

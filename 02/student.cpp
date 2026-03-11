@@ -102,7 +102,12 @@ const char* NazevPredmetu(PREDMET p) {
 
 //copy constructor
 Student::Student (const Student& vzor) {
-    jmeno = vzor.jmeno;
+    if (vzor.jmeno) {
+        jmeno = new char[strlen(vzor.jmeno) + 1];
+        strcpy(jmeno, vzor.jmeno);
+    } else {
+        jmeno = nullptr;
+    }
     pocet_predmetu = vzor.pocet_predmetu;
     predmety[MAX];
     for (int i = 0; i < pocet_predmetu; i++) {
@@ -139,4 +144,8 @@ void Student::SetJmeno(const char* j) {
 
 const char* Student::GetJmeno() {
     return jmeno;
+}
+
+Student::~Student() {
+    delete[] jmeno;
 }
