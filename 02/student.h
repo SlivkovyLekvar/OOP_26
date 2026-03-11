@@ -34,11 +34,13 @@ public:
 
 class Student {
 private:
-    std::string jmeno;
+    char* jmeno;
     Predmet predmety[MAX];
     int pocet_predmetu;
 
 public:
+    Student();
+    Student(const char* j);
     Student(std::string j) : jmeno(j), pocet_predmetu(0) {};
     bool Zapis (Predmet p);
     bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
@@ -51,7 +53,9 @@ public:
     //copy constructor
     Student(const Student& vzor);
 
-    const char* GetJmeno() { return jmeno.c_str(); }
+    void SetJmeno(const char* j);
+    const char* GetJmeno();
+    ~Student();
 };
 
 // NENÍ MOJE TVORBA: Pomocná funkce pro převod enum PREDMET na čitelný název 

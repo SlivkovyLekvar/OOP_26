@@ -1,4 +1,5 @@
 #include "student.h"
+#include <cstring>
 
 bool Student::Zapis(Predmet p){
     if (pocet_predmetu >= MAX) {
@@ -107,4 +108,35 @@ Student::Student (const Student& vzor) {
     for (int i = 0; i < pocet_predmetu; i++) {
         predmety[i] = vzor.predmety[i];
     }
+}
+
+// constructors
+Student::Student() {
+    jmeno = nullptr;
+    pocet_predmetu = 0;
+}
+
+Student::Student(const char* j) {
+    pocet_predmetu = 0;
+
+    if (j) {
+        jmeno = new char[strlen(j)+1];
+        strcpy(jmeno, j);
+    } else {
+        jmeno = nullptr;
+    }
+}
+
+void Student::SetJmeno(const char* j) {
+    delete[] jmeno;
+    if (j) {
+        jmeno = new char[strlen(j)+1];
+        strcpy(jmeno, j);
+    } else {
+        jmeno = nullptr;
+    } 
+}
+
+const char* Student::GetJmeno() {
+    return jmeno;
 }
