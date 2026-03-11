@@ -41,7 +41,6 @@ private:
 public:
     Student();
     Student(const char* j);
-    Student(std::string j) : jmeno(j), pocet_predmetu(0) {};
     bool Zapis (Predmet p);
     bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
 
@@ -52,7 +51,7 @@ public:
 
     //copy constructor
     Student(const Student& vzor);
-    
+
     void SetJmeno(const char* j);
     const char* GetJmeno();
     ~Student();

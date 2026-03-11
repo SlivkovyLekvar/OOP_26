@@ -14,7 +14,7 @@ bool Student::Zapis(Predmet p){
     }
     predmety[pocet_predmetu] = p;
     pocet_predmetu++;
-    printf("Student %s si zapsal předmět %s.\n", jmeno.c_str(), NazevPredmetu(p.GetPredmet()));
+    printf("Student %s si zapsal předmět %s.\n", jmeno, NazevPredmetu(p.GetPredmet()));
     return true;
 }
 
@@ -44,7 +44,7 @@ bool Student::Hodnoceni(PREDMET p, bool zapocet, ZNAMKA z){
 }
 
 int Student::ZapsanePredmety() {
-    printf("Student %s má zapsané předměty:\n", jmeno.c_str());
+    printf("Student %s má zapsané předměty:\n", jmeno);
     for (int i=0; i<pocet_predmetu;i++) {
         printf("%s\n", NazevPredmetu(predmety[i].GetPredmet()));
     }
@@ -52,7 +52,7 @@ int Student::ZapsanePredmety() {
 }
 
 int Student::VypisZnamek() {
-    printf("Hodnoceni studenta %s:\n", jmeno.c_str());
+    printf("Hodnoceni studenta %s:\n", jmeno);
     for (int i =0; i <pocet_predmetu; i++) {
         printf("%s: %d\n", NazevPredmetu(predmety[i].GetPredmet()), predmety[i].znamka);
     }
