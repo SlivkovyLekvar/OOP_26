@@ -1,7 +1,11 @@
 #include "student.h"
 #include "zvire.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 int main() {
+
+    system("chcp 65001");
 
     Student Pavel("Pavel");
     Pavel.Zapis(PREDMET::Matematicka_Analyza);
