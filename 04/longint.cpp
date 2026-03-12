@@ -65,4 +65,39 @@ LongInt LongInt::operator=(const char* str)
     return *this;
 }
 
+LongInt LongInt::operator+(LongInt li){
+    LongInt newLi;
+    newLi.value = value + li.value;
+    return newLi;
+}
 
+LongInt LongInt::operator-(LongInt li){
+    LongInt newLi;
+    newLi.value = value - li.value;
+    return newLi;
+}
+
+LongInt LongInt::operator*(LongInt li){
+    LongInt newLi;
+    newLi.value = value * li.value;
+    return newLi;
+}
+
+LongInt LongInt::operator/(LongInt li){
+    LongInt newLi;
+    newLi.value = value / li.value;
+    return newLi;
+}
+
+LongInt& LongInt::operator+=(LongInt li){
+    
+}
+LongInt& LongInt::operator-=(LongInt li){
+
+}
+LongInt& LongInt::operator*=(LongInt li){
+
+}
+LongInt& LongInt::operator/=(LongInt li){
+
+}

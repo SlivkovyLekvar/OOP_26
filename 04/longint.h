@@ -25,5 +25,13 @@ class LongInt {
     // exponentiation operator
     int64_t exp(int base, int exponent);
     
-    
+    LongInt operator+(LongInt li);
+    LongInt operator-(LongInt li);
+    LongInt operator*(LongInt li);
+    LongInt operator/(LongInt li);
+    LongInt& operator+=(LongInt li);
+    LongInt& operator-=(LongInt li);
+    LongInt& operator*=(LongInt li);
+    LongInt& operator/=(LongInt li);
+
 };
