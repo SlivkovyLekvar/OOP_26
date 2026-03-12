@@ -7,7 +7,7 @@ LongInt& LongInt::operator=(const LongInt &li)
     return *this;
 }
 
-int LongInt::operator=(const int64_t &v)
+int64_t LongInt::operator=(const int64_t &v)
 {
     value = v;
     return value;
@@ -85,19 +85,24 @@ LongInt LongInt::operator*(LongInt li){
 
 LongInt LongInt::operator/(LongInt li){
     LongInt newLi;
-    newLi.value = value / li.value;
+    if (li.value) newLi.value = value / li.value;
+    else printf("Nelze delit nulou.");
     return newLi;
 }
 
 LongInt& LongInt::operator+=(LongInt li){
-    
+    *this = *this + li;
+    return *this;
 }
 LongInt& LongInt::operator-=(LongInt li){
-
+    *this = *this - li;
+    return *this;
 }
 LongInt& LongInt::operator*=(LongInt li){
-
+    *this = *this * li;
+    return *this;
 }
-LongInt& LongInt::operator/=(LongInt li){
-
+LongInt& LongInt::operator/=(LongInt li){s
+    *this = *this / li;
+    return *this;
 }

@@ -15,7 +15,7 @@ class LongInt {
     LongInt copy(const LongInt& li) {value = li.value;};
     // assignment operator
     LongInt& operator=(const LongInt &li);
-    int operator=(const int64_t &v);
+    int64_t operator=(const int64_t &v);
     // copy constructor for char
     LongInt (const char* str);
     //asignment operator for char
