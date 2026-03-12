@@ -2,7 +2,9 @@
 
 class LongInt {
     private:
-        int64_t value;
+    int64_t value;
+    //clear
+    void clear() {value = 0;};
     public:
     LongInt(int64_t v) {value = v;};
     // implicit constructor
@@ -10,9 +12,9 @@ class LongInt {
     // destructor
     ~LongInt() {};
     // copy constructor
-    LongInt (const LongInt& li) {value = li.value;};
+    LongInt copy(const LongInt& li) {value = li.value;};
     // assignment operator
-    LongInt operator=(const LongInt &li);
+    LongInt& operator=(const LongInt &li);
     int operator=(const int64_t &v);
     // copy constructor for char
     LongInt (const char* str);
@@ -22,5 +24,6 @@ class LongInt {
     int len(const char* str);
     // exponentiation operator
     int64_t exp(int base, int exponent);
-
+    
+    
 };

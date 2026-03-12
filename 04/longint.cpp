@@ -1,7 +1,7 @@
 #include "longint.h"
 #include <cstdio>
 
-LongInt LongInt::operator=(const LongInt &li)
+LongInt& LongInt::operator=(const LongInt &li)
 {
     value = li.value;
     return *this;
@@ -64,3 +64,5 @@ LongInt LongInt::operator=(const char* str)
     value = number;
     return *this;
 }
+
+
