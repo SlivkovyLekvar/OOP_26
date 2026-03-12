@@ -102,7 +102,7 @@ LongInt& LongInt::operator*=(LongInt li){
     *this = *this * li;
     return *this;
 }
-LongInt& LongInt::operator/=(LongInt li){s
+LongInt& LongInt::operator/=(LongInt li){
     *this = *this / li;
     return *this;
 }

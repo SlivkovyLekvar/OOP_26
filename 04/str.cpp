@@ -110,3 +110,16 @@ int Str::print() const {
     return 0;
 }
 
+bool Str::operator==(const Str& s){
+    return false;
+}
+bool Str::operator<=(const Str& s){
+    return false;
+}
+bool Str::operator>=(const Str& s){
+    return false;
+}
+bool Str::operator!=(const Str& s){
+    return false;
+}
+

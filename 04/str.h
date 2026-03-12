@@ -38,4 +38,9 @@ class Str {
 
         int print() const;
 
+        bool operator==(const Str& s);
+        bool operator<=(const Str& s);
+        bool operator>=(const Str& s);
+        bool operator!=(const Str& s);
+
 };  
