@@ -34,4 +34,6 @@ class LongInt {
     LongInt& operator*=(LongInt li);
     LongInt& operator/=(LongInt li);
 
+    int64_t GetValue() {return value;};
+
 };
