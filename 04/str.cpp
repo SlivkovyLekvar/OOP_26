@@ -109,17 +109,49 @@ int Str::print() const {
     }
     return 0;
 }
-
+int Str::Delsi(const Str& s){
+    int i = s.len();
+    int j = len();
+    if (i > j) return i;
+    else return j;
+}
 bool Str::operator==(const Str& s){
-    return false;
+    int i = 0;
+    char a = s.buff[i];
+    char b = buff[i];
+    int delsi = Delsi(s);
+    while (i < delsi) {
+        if (a!=b) return false;
+        a = s.buff[++i];
+        b = buff[i];
+    }
+    return true;
 }
 bool Str::operator<=(const Str& s){
-    return false;
+    int i = 0;
+    char a = s.buff[i];
+    char b = buff[i];
+    int delsi = Delsi(s);
+    while (i<delsi) {
+        if (a < b) return false;
+        a = s.buff[++i];
+        b = buff[i];
+    }
+    return true;
 }
 bool Str::operator>=(const Str& s){
-    return false;
+    int i = 0;
+    char a = s.buff[i];
+    char b = buff[i];
+    int delsi = Delsi(s);
+    while (i<delsi) {
+        if (a > b) return false;
+        a = s.buff[++i];
+        b = buff[i];
+    }
+    return true;
 }
 bool Str::operator!=(const Str& s){
-    return false;
+    return !(*this==s);
 }
 

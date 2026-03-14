@@ -43,4 +43,6 @@ class Str {
         bool operator>=(const Str& s);
         bool operator!=(const Str& s);
 
+        int Delsi(const Str& s);
+
 };  

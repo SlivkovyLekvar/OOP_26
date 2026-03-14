@@ -12,7 +12,7 @@ class LongInt {
     // destructor
     ~LongInt() {};
     // copy constructor
-    LongInt copy(const LongInt& li) {value = li.value;};
+    LongInt copy(const LongInt& li) {value = li.value; return value;};
     // assignment operator
     LongInt& operator=(const LongInt &li);
     int64_t operator=(const int64_t &v);
