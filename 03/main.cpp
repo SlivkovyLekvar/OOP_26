@@ -1,4 +1,6 @@
 #include "complex.h"
+#include "student.h"
+#include "zvire.h"
 
 int main() {
     Complex c1(1, 2);
