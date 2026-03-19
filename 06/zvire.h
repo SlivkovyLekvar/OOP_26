@@ -32,14 +32,15 @@ class Savec : public Zvire {
 private:
  
 public:
-    
-
+   int jez(); 
 };
 
 class Ptak : public Zvire {
-
+public:
+    int jez();
 };
 
 class Ryba : public Zvire {
-
+public:
+    int jez();
 };

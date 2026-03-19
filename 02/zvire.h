@@ -5,7 +5,6 @@ class Zvire {
 private:
     int zaludek;
     char* jmeno;
-
 public:
     Zvire() {zaludek = 1;};
     Zvire(int z) {zaludek = z;};
@@ -25,3 +24,7 @@ public:
     void SetJmeno(const char* j);
     ~Zvire();
 };
+
+struct Zvire {
+
+} Zvire;

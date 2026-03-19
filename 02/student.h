@@ -59,3 +59,7 @@ public:
 
 // NENÍ MOJE TVORBA: Pomocná funkce pro převod enum PREDMET na čitelný název 
 const char* NazevPredmetu(PREDMET p);
+
+struct Student {
+
+} Student;
