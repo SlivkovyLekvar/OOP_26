@@ -63,3 +63,24 @@ Zvire& Zvire::operator=(const Zvire& vzor) {
     zaludek = vzor.zaludek;
     return *this;
 }
+
+int Savec::jez(int jidlo) {
+    if (!zije()) return 0;
+    return zaludek += jidlo*2;
+}
+
+int Ptak::jez(int jidlo) {
+    if (!zije()) return 0;
+    return zaludek += jidlo/2;
+}
+
+int Ryba::jez(int jidlo) {
+    if (!zije()) return 0;
+    return zaludek += jidlo+2;
+}
+
+bool Zvire::zije() {
+    if (zaludek<=0) return false;
+    if (zaludek > delka_zivota) return false;
+    return true;
+}

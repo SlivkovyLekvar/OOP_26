@@ -5,12 +5,13 @@ class Zvire {
 protected:
     int zaludek;
     char* jmeno;
+    int delka_zivota;
 
 public:
-    Zvire() {zaludek = 1;};
-    Zvire(int z) {zaludek = z;};
+    Zvire() {zaludek = 1; delka_zivota = 10;};
+    Zvire(int z) {zaludek = z; delka_zivota = 10;};
 
-    int zije() {return zaludek>0;};
+    bool zije();
     int jez(int jidlo);
     int vymesuj(int objem);
     int stari();
@@ -29,18 +30,22 @@ public:
 };
 
 class Savec : public Zvire {
-private:
- 
 public:
-   int jez(); 
+    Savec() {delka_zivota = 20;}
+    int jez(int jidlo); 
+    enum PocetPrstu {dva, tri, ctyri, pet};
 };
 
 class Ptak : public Zvire {
 public:
-    int jez();
+    Ptak() {delka_zivota = 10;}
+    int jez(int jidlo);
+    enum BarvaPeri {bila, cerna, cervena, zelena, modra};
 };
 
 class Ryba : public Zvire {
 public:
-    int jez();
+    Ryba() {delka_zivota = 100;}
+    int jez(int jidlo);
+    enum SlanostVody {slana, sladka};
 };
