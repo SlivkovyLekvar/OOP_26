@@ -1,6 +1,16 @@
 #include "zvire.h"
 #include <cstring>
 
+Zvire::Zvire() {
+    zaludek = 1; 
+    delka_zivota = 10;
+}
+
+Zvire::Zvire(int z) {
+    zaludek = z; 
+    delka_zivota = 10;
+}
+
 int Zvire::jez(int jidlo) {
     if (!zije()) return 0;
     return zaludek += jidlo;
@@ -29,6 +39,7 @@ Zvire::Zvire(const Zvire& vzor) {
     } else {
         jmeno = nullptr;
     }
+    zaludek = vzor.zaludek;
 }
 
 // constructor
@@ -61,6 +72,7 @@ Zvire::~Zvire() {
 
 Zvire& Zvire::operator=(const Zvire& vzor) {
     zaludek = vzor.zaludek;
+    SetJmeno(vzor.jmeno);
     return *this;
 }
 

@@ -8,8 +8,8 @@ protected:
     int delka_zivota;
 
 public:
-    Zvire() {zaludek = 1; delka_zivota = 10;};
-    Zvire(int z) {zaludek = z; delka_zivota = 10;};
+    Zvire();
+    Zvire(int z);
 
     bool zije();
     int jez(int jidlo);
@@ -34,6 +34,7 @@ public:
     Savec() {delka_zivota = 20;}
     int jez(int jidlo); 
     enum PocetPrstu {dva, tri, ctyri, pet};
+    PocetPrstu prsty;
 };
 
 class Ptak : public Zvire {
@@ -41,6 +42,7 @@ public:
     Ptak() {delka_zivota = 10;}
     int jez(int jidlo);
     enum BarvaPeri {bila, cerna, cervena, zelena, modra};
+    BarvaPeri barva;
 };
 
 class Ryba : public Zvire {
@@ -48,4 +50,5 @@ public:
     Ryba() {delka_zivota = 100;}
     int jez(int jidlo);
     enum SlanostVody {slana, sladka};
+    SlanostVody voda;
 };
