@@ -1,19 +1,19 @@
 #include <iostream>
 
 namespace Amalka {
-    void f() { std::cout<<"Byla zavolána funkce f() z namespace: "<<std::endl; }
-    const char* g() { return "Amalka";}
+    void f();
+    const char* g();
 }
 
 namespace Ferdinand {
-    void f() { std::cout<<"Byla zavolána funkce f() z namespace: "<<std::endl; }
-    const char* g() { return "Ferdinand";}
+    void f();
+    const char* g();
 }
 
 namespace Teodor {
-    void f() {std::cout<<"Byla zavolána funkce f() z namespace: "<<std::endl; }
-    const char* g() { return "Teodor";}
+    void f();
+    const char* g();
 }
 
-void f() {std::cout<<"Byla zavolána funkce f() z globálního prostoru jmen: "<<std::endl; };
-const char* g() { return "mynss.h"; };
+void f();
+const char* g();
