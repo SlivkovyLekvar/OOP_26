@@ -5,7 +5,7 @@ Cislo::Cislo() {
     valueI = 0;
 }
 
-Cislo::Cislo(double a, double b = 0) {
+Cislo::Cislo(double a, double b) {
     valueR = a;
     valueI = b;
 }
