@@ -20,8 +20,11 @@ bool Student::Zapis(Predmet p){
 bool Student::Hodnoceni(PREDMET p, bool zapocet, ZNAMKA z){
     for (int i = 0; i < pocet_predmetu; i++) {
         if (predmety[i].GetPredmet() == p) {
-            if (predmety[i].pocet_pokusu <= 0) {printf("Student již nemá pokusy na tento předmět.\n");}
-            else if (zapocet) {predmety[i].zapocet = true;}
+            if (predmety[i].pocet_pokusu <= 0) {
+                printf("Student již nemá pokusy na tento předmět.\n");
+                return false;
+            }
+            if (zapocet) {predmety[i].zapocet = true;}
             else if (!predmety[i].zapocet) {
                 printf("Student nezískal zápočet, nemůže být hodnocen.\n");
                 predmety[i].pocet_pokusu--;
@@ -52,8 +55,9 @@ int Student::ZapsanePredmety() {
 
 int Student::VypisZnamek() {
     printf("Hodnoceni studenta %s:\n", jmeno.c_str());
+    char znamky[] = {'X','A','B','C','D','E','F'};
     for (int i =0; i <pocet_predmetu; i++) {
-        printf("%s: %d\n", NazevPredmetu(predmety[i].GetPredmet()), predmety[i].znamka);
+        printf("%s: %c\n", NazevPredmetu(predmety[i].GetPredmet()), znamky[(int)predmety[i].znamka]);
     }
     return 0;
 }
@@ -68,11 +72,11 @@ int Student::SplnenychPredmetu() {
 }
 
 float Student::PrumerZnamek() {
-    int soucet = 0;
+    float soucet = 0;
     int pocet = 0;
     for (int i=0; i<pocet_predmetu; i++) {
         if (predmety[i].Splnen()) {
-            soucet = soucet + static_cast<int>(predmety[i].znamka);
+            soucet = soucet + static_cast<float>(predmety[i].znamka);
             pocet++;
         }
     }

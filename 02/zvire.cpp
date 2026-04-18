@@ -3,6 +3,7 @@
 
 int Zvire::jez(int jidlo) {
     if (!zije()) return 0;
+    vek++;
     return zaludek += jidlo;
 }
 
@@ -18,17 +19,7 @@ int Zvire::stari() {
         printf("Zvíře je již mrtvé.\n");
         return 0;
     }
-    return zaludek;
-}
-
-//copy constructor
-Zvire::Zvire(const Zvire& vzor) {
-    if (vzor.jmeno) {
-        jmeno = new char[strlen(vzor.jmeno) + 1];
-        strcpy(jmeno, vzor.jmeno);
-    } else {
-        jmeno = nullptr;
-    }
+    return vek;
 }
 
 // constructor
@@ -41,22 +32,31 @@ Zvire::Zvire(const char* j) {
     }
 }
 
-const char* Zvire::GetJmeno() {
-    return jmeno;
-}
-
-void Zvire::SetJmeno(const char* j) {
-    delete[] jmeno;
-    if (j) {
-        jmeno = new char[strlen(j) + 1];
-        strcpy(jmeno, j);
+//copy constructor
+Zvire::Zvire(const Zvire& vzor) {
+    if (vzor.jmeno) {
+        jmeno = new char[strlen(vzor.jmeno) + 1];
+        strcpy(jmeno, vzor.jmeno);
     } else {
         jmeno = nullptr;
     }
 }
 
+const char* Zvire::GetJmeno() {
+    return jmeno;
+}
+
 Zvire::~Zvire() {
     delete[] jmeno;
+}
+
+void Zvire::SetJmeno(const char* jmeno) {
+    if (jmeno == nullptr) {
+        this->jmeno = nullptr;
+        return;}
+    delete[] this->jmeno; 
+    this->jmeno = new char[strlen(jmeno) + 1];
+    strcpy(this->jmeno, jmeno);
 }
 
 

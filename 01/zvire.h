@@ -4,13 +4,14 @@
 class Zvire {
 private:
     int zaludek;
+    int vek;
 
 public:
-    Zvire() {zaludek = 1;};
-    Zvire(int z) {zaludek = z;};
-    Zvire(const Zvire& vzor) {zaludek = vzor.zaludek;};
+    Zvire() {zaludek = 1; vek = 0;};
+    Zvire(int z) {zaludek = z; vek = 0;};
+    Zvire(const Zvire& vzor) {zaludek = vzor.zaludek; vek = vzor.vek;};
 
-    int zije() {return zaludek>0;};
+    bool zije();
     int jez(int jidlo);
     int vymesuj(int objem);
     int stari();

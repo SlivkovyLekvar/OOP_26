@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 
 const int MAX = 20;
 
@@ -17,49 +17,17 @@ enum class PREDMET {
 
 enum class ZNAMKA { X, A, B, C, D, E, F};
 
-class Predmet {
-private:
-    PREDMET predmet;
-public:
-    ZNAMKA znamka = ZNAMKA::X;
-    bool zapocet = false;
-    bool zkouska = false;
-    int pocet_pokusu = 3;
-
-    Predmet() {};
-    Predmet(PREDMET p) : predmet(p) {};
-    PREDMET GetPredmet() { return predmet; }
-    bool Splnen() { return (zapocet && zkouska) ? true : false; }
-};
-
-class Student {
-private:
-    char* jmeno;
-    Predmet predmety[MAX];
-    int pocet_predmetu;
-
-public:
-    Student();
-    Student(const char* j);
-    bool Zapis (Predmet p);
-    bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
-
-    int ZapsanePredmety();
-    int VypisZnamek();
-    int SplnenychPredmetu();
-    float PrumerZnamek();
-
-    //copy constructor
-    Student(const Student& vzor);
-
-    void SetJmeno(const char* j);
-    const char* GetJmeno();
-    ~Student();
-};
-
-// NENÍ MOJE TVORBA: Pomocná funkce pro převod enum PREDMET na čitelný název 
-const char* NazevPredmetu(PREDMET p);
-
 struct Student {
-
+    char* jmeno;
+    int pocet_predmetu;
+    struct {
+        PREDMET predmet;
+        ZNAMKA znamka;
+        bool zapocet;
+        bool zkouska;
+        int pocet_pokusu;
+    } predmety[MAX];
+    const char* get_jmeno() const {return jmeno;}
+    void set_jmeno(const char* jmeno);
+    int get_pocet_predmetu() const {return pocet_predmetu;}
 } Student;

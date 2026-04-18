@@ -2,7 +2,12 @@
 
 int Zvire::jez(int jidlo) {
     if (!zije()) return 0;
+    vek++;
     return zaludek += jidlo;
+}
+
+bool Zvire::zije() {
+    return zaludek > 0;
 }
 
 int Zvire::vymesuj(int objem) {
@@ -17,5 +22,5 @@ int Zvire::stari() {
         printf("Zvíře je již mrtvé.\n");
         return 0;
     }
-    return zaludek;
+    return vek;
 }
