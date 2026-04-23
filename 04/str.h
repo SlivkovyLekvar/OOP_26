@@ -32,7 +32,7 @@ class Str {
         Str& operator+=(const char* s);
 
         Str(char c);
-        Str operator=(char c);
+        Str& operator=(char c);
         Str operator+(char c);
         Str& operator+=(char c);
 

@@ -7,10 +7,10 @@ LongInt& LongInt::operator=(const LongInt &li)
     return *this;
 }
 
-int64_t LongInt::operator=(const int64_t &v)
+LongInt& LongInt::operator=(const int64_t v)
 {
     value = v;
-    return value;
+    return *this;
 }
 
 // dohledane jestli je char* typ ukoncen specialnim znakem
@@ -48,7 +48,7 @@ LongInt::LongInt (const char* str)
     value = number;
 }
 
-LongInt LongInt::operator=(const char* str)
+LongInt& LongInt::operator=(const char* str)
 {
     int64_t number = 0;
     for (int i = 0; i < len(str); i++) {

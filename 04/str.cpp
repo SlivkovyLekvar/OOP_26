@@ -5,23 +5,22 @@ Str::Str(const Str &s)
     if (s.buff) {
         buff = new char[strlen(s.buff) + 1];
         strcpy(buff, s.buff);
-    } else {
-        buff = 0;
-    }
+    } else buff = 0;
 }
 
 Str::Str(const char *s)
 {
-    buff = new char[strlen(s) + 1];
-    strcpy(buff, s);
+    if (s) {
+        buff = new char[strlen(s)+1];
+        strcpy(buff, s);
+    } else buff = 0;
 }
 
 Str& Str::operator=(const Str &s)
 {
     delete[] buff;
-    if (! s.len()) {
-        buff = 0;
-    } else {
+    if (! s.len()) buff = 0;
+    else {
         buff = new char[strlen(s.buff) + 1];
         strcpy(buff, s.buff);
     }
@@ -31,9 +30,8 @@ Str& Str::operator=(const Str &s)
 Str& Str::operator=(const char *s)
 {
     delete[] buff;
-    if (! s) {
-        buff = 0;
-    } else {
+    if (! s) buff = 0;
+    else {
         buff = new char[strlen(s) + 1];
         strcpy(buff, s);
     }
@@ -79,7 +77,7 @@ Str::Str(char c) {
     buff[1] = '\0';
 }
 
-Str Str::operator=(char c) {
+Str& Str::operator=(char c) {
     delete[] buff;
     if (!c) buff = 0;
     buff = new char[2];
@@ -90,7 +88,8 @@ Str Str::operator=(char c) {
 
 Str Str::operator+(char c) {
     Str newstr;
-    newstr.buff = new char[len()+2];
+    newstr.buff[len()] = c;
+    newstr.buff[len()+1] = '\0';
     strcpy(newstr.buff, buff);
     newstr.buff[len()+1]=c;
     newstr.buff[len()+2]='\0';

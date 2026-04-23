@@ -12,14 +12,14 @@ class LongInt {
     // destructor
     ~LongInt() {};
     // copy constructor
-    LongInt copy(const LongInt& li) {value = li.value; return value;};
+    LongInt(const LongInt& li) {value = li.value;}
     // assignment operator
     LongInt& operator=(const LongInt &li);
-    int64_t operator=(const int64_t &v);
+    LongInt& operator=(const int64_t v);
     // copy constructor for char
     LongInt (const char* str);
     //asignment operator for char
-    LongInt operator=(const char* str);
+    LongInt& operator=(const char* str);
     //length of char
     int len(const char* str);
     // exponentiation operator
