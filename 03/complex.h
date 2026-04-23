@@ -18,12 +18,12 @@ public:
 
     Complex(const Complex& c) {real = c.real; imag = c.imag;};
 
-    Complex operator=(const Complex& c);
+    Complex& operator=(const Complex& c);
     Complex operator+(const Complex& c) { return scitani(c); }
     Complex operator-(const Complex& c) { return odcitani(c); }
     Complex operator*(const Complex& c) { return nasobeni(c); }
 
-    Complex operator+=(const Complex& c);
-    Complex operator-=(const Complex& c);
-    Complex operator*=(double x);
+    Complex& operator+=(const Complex& c);
+    Complex& operator-=(const Complex& c);
+    Complex& operator*=(double x);
 };

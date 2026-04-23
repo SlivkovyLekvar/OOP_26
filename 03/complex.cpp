@@ -20,25 +20,25 @@ double Complex::GetReal() { return real; };
 
 double Complex::GetImag() { return imag; };
 
-Complex Complex::operator=(const Complex& c) {
+Complex& Complex::operator=(const Complex& c) {
     real = c.real;
     imag = c.imag;
     return *this;
 };
 
-Complex Complex::operator+=(const Complex& c) {
+Complex& Complex::operator+=(const Complex& c) {
     real += c.real;
     imag += c.imag;
     return *this;
 }
 
-Complex Complex::operator-=(const Complex& c) {
+Complex& Complex::operator-=(const Complex& c) {
     real -= c.real;
     imag -= c.imag;
     return *this;
 }
 
-Complex Complex::operator*=(double x) {
+Complex& Complex::operator*=(double x) {
     real *= x;
     imag *= x;
     return *this;

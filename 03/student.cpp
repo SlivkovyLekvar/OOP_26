@@ -53,8 +53,9 @@ int Student::ZapsanePredmety() {
 
 int Student::VypisZnamek() {
     printf("Hodnoceni studenta %s:\n", jmeno);
+    char znamky[] = {'X','A','B','C','D','E','F'};
     for (int i =0; i <pocet_predmetu; i++) {
-        printf("%s: %d\n", NazevPredmetu(predmety[i].GetPredmet()), predmety[i].znamka);
+        printf("%c\n", znamky[(int)predmety[i].znamka]);
     }
     return 0;
 }
@@ -69,7 +70,7 @@ int Student::SplnenychPredmetu() {
 }
 
 float Student::PrumerZnamek() {
-    int soucet = 0;
+    float soucet = 0;
     int pocet = 0;
     for (int i=0; i<pocet_predmetu; i++) {
         if (predmety[i].Splnen()) {
@@ -109,7 +110,6 @@ Student::Student (const Student& vzor) {
         jmeno = nullptr;
     }
     pocet_predmetu = vzor.pocet_predmetu;
-    predmety[MAX];
     for (int i = 0; i < pocet_predmetu; i++) {
         predmety[i] = vzor.predmety[i];
     }
@@ -150,7 +150,12 @@ Student::~Student() {
 }
 
 Student& Student::operator=(const Student &vzor) {
-    SetJmeno(vzor.jmeno);
-    
+    if (this != &vzor) {
+        SetJmeno(vzor.jmeno);
+        pocet_predmetu = vzor.pocet_predmetu;
+        for (int i = 0; i < pocet_predmetu; i++) {
+            predmety[i] = vzor.predmety[i];
+        }
+    }
     return *this;
 }

@@ -37,11 +37,11 @@ private:
     char* jmeno;
     Predmet predmety[MAX];
     int pocet_predmetu;
-    ~Student();
 
 public:
     Student();
     Student(const char* j);
+    ~Student();
     bool Zapis (Predmet p);
     bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
 

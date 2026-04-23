@@ -26,8 +26,10 @@ Zvire::Zvire(const Zvire& vzor) {
     if (vzor.jmeno) {
         jmeno = new char[strlen(vzor.jmeno) + 1];
         strcpy(jmeno, vzor.jmeno);
+        zaludek = vzor.zaludek;
     } else {
         jmeno = nullptr;
+        zaludek = 0;
     }
 }
 
@@ -60,7 +62,10 @@ Zvire::~Zvire() {
 }
 
 Zvire& Zvire::operator=(const Zvire& vzor) {
-    zaludek = vzor.zaludek;
+    if (this != &vzor) {
+        zaludek = vzor.zaludek;
+        SetJmeno(vzor.jmeno);
+    }
     return *this;
 }
 
