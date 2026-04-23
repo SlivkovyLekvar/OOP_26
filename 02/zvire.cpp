@@ -39,7 +39,9 @@ Zvire::Zvire(const Zvire& vzor) {
         strcpy(jmeno, vzor.jmeno);
     } else {
         jmeno = nullptr;
+        return;
     }
+    return;
 }
 
 const char* Zvire::GetJmeno() {

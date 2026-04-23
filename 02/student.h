@@ -17,17 +17,39 @@ enum class PREDMET {
 
 enum class ZNAMKA { X, A, B, C, D, E, F};
 
+// NENÍ MOJE TVORBA: Pomocná funkce pro převod enum PREDMET na čitelný název 
+const char* NazevPredmetu(PREDMET p);
+
+struct Predmety {
+    PREDMET predmet;
+    ZNAMKA znamka = ZNAMKA::X;
+    bool zapocet = false;
+    bool zkouska = false;
+    int pocetPokusu = 3;
+    Predmety();
+    Predmety(PREDMET predmet);
+    bool Splnen() { return (zapocet && zkouska) ? true : false; }
+};
+
 struct Student {
     char* jmeno;
-    int pocet_predmetu;
-    struct {
-        PREDMET predmet;
-        ZNAMKA znamka;
-        bool zapocet;
-        bool zkouska;
-        int pocet_pokusu;
-    } predmety[MAX];
-    const char* get_jmeno() const {return jmeno;}
-    void set_jmeno(const char* jmeno);
-    int get_pocet_predmetu() const {return pocet_predmetu;}
-} Student;
+    int pocetPredmetu;
+    Predmety predmety[MAX];
+    //constructor (implicit)
+    Student(const char* jmeno = "Unknown");
+    //destructor
+    ~Student();
+    //copy constructor
+    Student(const Student& vzor);
+    const char* GetJmeno() const {return jmeno;}
+    void SetJmeno(const char* jmeno);
+    int GetPocetPredmetu() const {return pocetPredmetu;}
+    bool Zapis(PREDMET p);
+    bool Hodnoceni (PREDMET p, bool zapocet, ZNAMKA z = ZNAMKA::X);
+    int ZapsanePredmety();
+    int VypisZnamek();
+    int SplnenychPredmetu();
+    float PrumerZnamek();
+};
+
+void SortMin(int &a, int &b, int &c);

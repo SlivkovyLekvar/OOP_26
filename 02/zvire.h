@@ -2,11 +2,9 @@
 #include <cstring>
 
 struct Zvire {
-    private:
     int zaludek = 1;
     int vek = 0;
     char* jmeno;
-    public:
     bool zije() {return zaludek>0;};
     int jez(int jidlo);
     int vymesuj(int objem);
