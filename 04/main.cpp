@@ -21,17 +21,17 @@ int main() {
     li4+="abd50";
     printf("li4+abd50: %lld\n", li4.GetValue());
 
-    //s2.print();
-    //Str s3 = "00000";
-    //s1+=s3;
-    //s1.print();
-    //Str s4 = "1234";
+    s2.print();
+    Str s3 = "00000";
+    s1+=s3;
+    s1.print();
+    Str s4 = "1234";
 
-    //if (s3 != s4) printf ("s1 a s2 nejsou stejne.\n");
-    //else printf ("s1 a s2 jsou stejne.\n");
+    if (s3 != s4) printf ("s1 a s2 nejsou stejne.\n");
+    else printf ("s1 a s2 jsou stejne.\n");
 
-    //if (s1 >= s2) printf ("s1 je vetsi s2\n");
-    //if (s3 <= s4) printf ("s3 je mensi s4\n");
+    if (s1 >= s2) printf ("s1 je vetsi nez s2\n");
+    if (s3 <= s4) printf ("s3 je mensi nez s4\n");
 
 
 

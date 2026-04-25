@@ -4,17 +4,17 @@
 class Str {
     private:
         char* buff;
-        void clear() {delete[] buff; buff = 0;};
-
+        void clear();
+        void copy(const char* s);
     public:
         // implicit constructor
-        Str() {buff = 0;};
+        Str();
         // copy constructors
         Str(const Str& s);
         Str(const char* s);
 
         // destructor
-        ~Str() {delete[] buff;};
+        ~Str();
 
         // assignment operator
         Str& operator=(const Str& s);
