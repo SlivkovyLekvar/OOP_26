@@ -9,7 +9,7 @@ protected:
 
 public:
     Zvire();
-    Zvire(int z);
+    Zvire(int z, const char* j);
 
     bool zije();
     int jez(int jidlo);
@@ -34,6 +34,7 @@ public:
     Savec() {delka_zivota = 20;}
     int jez(int jidlo); 
     enum PocetPrstu {dva, tri, ctyri, pet};
+    void SetPrsty(PocetPrstu p) { prsty = p; }
     PocetPrstu prsty;
 };
 
@@ -42,6 +43,7 @@ public:
     Ptak() {delka_zivota = 10;}
     int jez(int jidlo);
     enum BarvaPeri {bila, cerna, cervena, zelena, modra};
+    void SetBarva(BarvaPeri b) { barva = b; }
     BarvaPeri barva;
 };
 
@@ -50,5 +52,6 @@ public:
     Ryba() {delka_zivota = 100;}
     int jez(int jidlo);
     enum SlanostVody {slana, sladka};
+    void SetVoda(SlanostVody v) { voda = v; }
     SlanostVody voda;
 };

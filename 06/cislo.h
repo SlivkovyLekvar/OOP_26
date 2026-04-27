@@ -1,3 +1,5 @@
+
+
 class Cislo {
 protected:
     double valueR;

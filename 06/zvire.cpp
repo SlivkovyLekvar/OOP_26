@@ -2,11 +2,18 @@
 #include <cstring>
 
 Zvire::Zvire() {
+    jmeno = "";
     zaludek = 1; 
     delka_zivota = 10;
 }
 
-Zvire::Zvire(int z) {
+Zvire::Zvire(int z, const char* j) {
+    if (j) {
+        jmeno = new char[strlen(j) + 1];
+        strcpy(jmeno, j);
+    } else {
+        jmeno = nullptr;
+    }
     zaludek = z; 
     delka_zivota = 10;
 }
@@ -40,6 +47,7 @@ Zvire::Zvire(const Zvire& vzor) {
         jmeno = nullptr;
     }
     zaludek = vzor.zaludek;
+    delka_zivota = vzor.delka_zivota;
 }
 
 // constructor
@@ -49,7 +57,11 @@ Zvire::Zvire(const char* j) {
         strcpy(jmeno, j);
     } else {
         jmeno = nullptr;
+        zaludek = NULL;
+        delka_zivota = NULL;
     }
+    zaludek = 1;
+    delka_zivota = 10;
 }
 
 const char* Zvire::GetJmeno() {
@@ -71,7 +83,10 @@ Zvire::~Zvire() {
 }
 
 Zvire& Zvire::operator=(const Zvire& vzor) {
+    if (this == &vzor) return *this;
+
     zaludek = vzor.zaludek;
+    delka_zivota = vzor.delka_zivota;
     SetJmeno(vzor.jmeno);
     return *this;
 }
