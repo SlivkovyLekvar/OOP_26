@@ -2,7 +2,7 @@
 #include <cstring>
 
 Zvire::Zvire() {
-    jmeno = "";
+    jmeno = nullptr;
     zaludek = 1; 
     delka_zivota = 10;
 }
@@ -57,8 +57,8 @@ Zvire::Zvire(const char* j) {
         strcpy(jmeno, j);
     } else {
         jmeno = nullptr;
-        zaludek = NULL;
-        delka_zivota = NULL;
+        zaludek = 0;
+        delka_zivota = 0;
     }
     zaludek = 1;
     delka_zivota = 10;

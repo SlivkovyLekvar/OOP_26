@@ -21,8 +21,6 @@ int main() {
     Rak.jez(50);
     printf("Rak ma: %d\n", Rak.stari());
 
-    //dynamicka alokace
-
     //cisla
     Cislo a(5);
 

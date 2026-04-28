@@ -19,15 +19,18 @@ Cislo Cislo::operator+(Cislo x) {
 
 KomplexniCislo KomplexniCislo::operator+(KomplexniCislo c) {
     KomplexniCislo newC;
+    newC = KomplexniCislo(c.GetR()+GetR(), c.GetI()+GetI());
     return newC;
 }
 
-RealneCislo RealneCislo::operator+(RealneCislo b) {
+RealneCislo RealneCislo::operator+(RealneCislo r) {
     RealneCislo newR;
+    newR = RealneCislo(r.GetR() + GetR());
     return newR;
 }
 
-CeleCislo CeleCislo::operator+(CeleCislo a) {
-    CeleCislo newA;
-    return newA;
+CeleCislo CeleCislo::operator+(CeleCislo z) {
+    CeleCislo newZ;
+    newZ = CeleCislo(static_cast<double>(z.GetR() + GetR()));
+    return newZ;
 }
