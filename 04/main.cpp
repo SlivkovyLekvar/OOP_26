@@ -27,8 +27,8 @@ int main() {
     s1.print();
     Str s4 = "1234";
 
-    if (s3 != s4) printf ("s1 a s2 nejsou stejne.\n");
-    else printf ("s1 a s2 jsou stejne.\n");
+    if (s3 != s4) printf ("s3 a s4 nejsou stejne.\n");
+    else printf ("s3 a s4 jsou stejne.\n");
 
     if (s1 >= s2) printf ("s1 je vetsi nez s2\n");
     if (s3 <= s4) printf ("s3 je mensi nez s4\n");

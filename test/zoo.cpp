@@ -30,7 +30,7 @@ Zvire::~Zvire() {
     delete[] jmeno;
 }
 
-const char* Zvire::GetJmeno() {
+const char* Zvire::GetJmeno() const {
     return jmeno;
 }
 
@@ -105,14 +105,12 @@ void Savec::Jez(int jidlo) {
 }
 
 
-
 // ======================= PTAK =======================
 
 void Ptak::Jez(int jidlo) {
     obsahZaludku += jidlo / 2;
     vek++;
 }
-
 
 
 // ======================= PLAZ =======================
@@ -156,7 +154,6 @@ void Osetrovatel::NastavSoubor(const char* s) {
     if (s) sesit = s;
 }
 
-// jednoduchý stream bez static
 void Osetrovatel::ZapisKrmeni(Zvire& z, int jidlo) {
     std::ofstream f(sesit, std::ios::app);
     if (!f) return;
@@ -175,7 +172,6 @@ void Osetrovatel::ZapisPoznamku(const char* text) {
 // ======================= VYBEH =======================
 
 Vybeh::Vybeh() {
-    noZvirat = 0;
     noOsetrovatelu = 0;
 }
 

@@ -1,4 +1,5 @@
 #include "cislo.h"
+#include <cstdio>
 
 Cislo::Cislo() {
     valueR = 0;
@@ -20,12 +21,14 @@ Cislo Cislo::operator+(Cislo x) {
 KomplexniCislo KomplexniCislo::operator+(KomplexniCislo c) {
     KomplexniCislo newC;
     newC = KomplexniCislo(c.GetR()+GetR(), c.GetI()+GetI());
+    printf("Scitam komplexni cisla.... vysledek: %.2f + %.2fi", newC.GetR(), newC.GetI());
     return newC;
 }
 
 RealneCislo RealneCislo::operator+(RealneCislo r) {
     RealneCislo newR;
     newR = RealneCislo(r.GetR() + GetR());
+    printf("Scitam realni cisla.... vysledek: %.2f", newR.GetR());
     return newR;
 }
 

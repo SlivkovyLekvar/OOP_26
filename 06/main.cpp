@@ -23,6 +23,12 @@ int main() {
 
     //cisla
     Cislo a(5);
+    float x = 2.74;
+    float y = 45.1;
+    KomplexniCislo u = KomplexniCislo(x,y);
+    KomplexniCislo v = KomplexniCislo(y,x);
+    u+v;
+
 
     return 0;
 }
